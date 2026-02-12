@@ -229,17 +229,71 @@ export enum ImageType {
     PosterPortrait = "PosterPortrait",
 }
 
+export interface Trailer {
+    type:        string;
+    url:         string;
+    embeddedUrl: string;
+}
+
+export interface MovieDetailsAPI {
+    id:                string;
+    title:             string;
+    originalTitle:     string;
+    type:              string;
+    movieIdUrl:        string;
+    ancineId:          string;
+    countryOrigin:     string;
+    priority:          number;
+    contentRating:     string;
+    duration:          string;
+    rating:            number;
+    synopsis:          string;
+    cast:              string;
+    director:          string;
+    directors:         string;
+    imageFeatured:     string;
+    distributor:       string;
+    inPreSale:         boolean;
+    isReexhibition:    boolean;
+    isComingSoon:      boolean;
+    urlKey:            string;
+    isPlaying:         boolean;
+    countIsPlaying:    number;
+    premiereDate:      PremiereDate;
+    creationDate:      Date;
+    city:              string;
+    siteURL:           string;
+    nationalSiteURL:   string;
+    images:            Image[];
+    genres:            string[];
+    ratingDescriptors: string[];
+    accessibilityHubs: any[];
+    completeTags:      any[];
+    tags:              any[];
+    trailers:          Trailer[];
+    partnershipType:   null;
+    titleSeen:         null;
+    ratingDetails:     RatingDetails;
+    b2BEventId:        null;
+    cities:            any[];
+}
+
 export interface PremiereDate {
     localDate:   Date;
     isToday:     boolean;
     dayOfWeek:   string;
     dayAndMonth: string;
-    hour:        Hour;
+    hour:        string;
     year:        string;
 }
 
-export enum Hour {
-    The0000 = "00:00",
+export interface RatingDetails {
+    id:          number;
+    name:        string;
+    label:       string;
+    displayName: string;
+    description: string;
+    color:       string;
 }
 
 export interface Trailer {
